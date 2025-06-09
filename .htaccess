@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirect all requests to index.php if the file doesn't exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ redirect.php?code=$1 [L,QSA]
+
+# Prevent directory listing
+Options -Indexes
