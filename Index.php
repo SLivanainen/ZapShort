@@ -1,0 +1,58 @@
+<?php include 'db.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapShort - Free URL Shortener</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔗</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-link"></i> ZapShort</h1>
+            <p>Free URL Shortener Service</p>
+        </header>
+
+        <div class="shortener-box">
+            <form id="shorten-form">
+                <input type="url" id="long-url" placeholder="Paste your long URL here..." required>
+                <button type="submit" id="shorten-btn">Shorten</button>
+            </form>
+            <div id="result" class="hidden">
+                <p>Your shortened URL:</p>
+                <div class="result-box">
+                    <input type="text" id="short-url" readonly>
+                    <button id="copy-btn"><i class="far fa-copy"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast</h3>
+                <p>Instant URL shortening with minimal redirects</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Reliable</h3>
+                <p>99.9% uptime with no broken links</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Simple</h3>
+                <p>No registration required, completely free</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; <?php echo date('Y'); ?> ZapShort - Free URL Shortener</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
